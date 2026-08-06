@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>سامانه آزمون آنلاین</title>
+
+    <!-- فونت -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- آیکون -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+
+        <div class="card">
+
+            <div class="logo">
+
+                <div class="logo-circle">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h1>سامانه آزمون آنلاین</h1>
+
+                <p>
+                    ورود اطلاعات شرکت کننده
+                </p>
+
+            </div>
+
+            <form id="loginForm">
+
+                <div class="input-box">
+
+                    <label>
+
+                        <i class="fa-solid fa-user"></i>
+
+                        نام
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="firstName"
+                        placeholder="نام خود را وارد کنید">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>
+
+                        <i class="fa-solid fa-user"></i>
+
+                        نام خانوادگی
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lastName"
+                        placeholder="نام خانوادگی">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        شماره تلفن
+
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="09xxxxxxxxx">
+
+                </div>
+
+                <div class="input-box">
+
+                    <label>
+
+                        <i class="fa-solid fa-school"></i>
+
+                        پایه تحصیلی
+
+                    </label>
+
+                    <select id="grade">
+
+                        <option value="">
+                            انتخاب کنید
+                        </option>
+
+                        <option>هفتم</option>
+
+                        <option>هشتم</option>
+
+                        <option>نهم</option>
+
+                        <option>دهم</option>
+
+                        <option>یازدهم</option>
+
+                        <option>دوازدهم</option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="start-btn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    شروع آزمون
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
