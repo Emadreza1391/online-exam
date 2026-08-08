@@ -62,6 +62,6 @@ form.addEventListener("submit", function (e) {
 
     // بعداً این خط را فعال می‌کنیم
 
-    // window.location.href = "answer-sheet.html";
+     window.location.href = "answer-sheet.html";
 
 });
