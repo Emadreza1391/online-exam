@@ -1,1 +1,381 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>کارنامه آزمون</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.result-card{
+
+max-width:850px;
+
+margin:auto;
+
+}
+
+.header{
+
+text-align:center;
+
+margin-bottom:30px;
+
+color:white;
+
+}
+
+.header h1{
+
+margin-bottom:10px;
+
+}
+
+.info{
+
+background:rgba(255,255,255,.18);
+
+padding:20px;
+
+border-radius:15px;
+
+margin-bottom:20px;
+
+color:white;
+
+line-height:2;
+
+}
+
+.summary{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+margin-top:20px;
+
+}
+
+.box{
+
+background:white;
+
+padding:20px;
+
+border-radius:15px;
+
+text-align:center;
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+.box h2{
+
+color:#2563eb;
+
+font-size:30px;
+
+margin-top:10px;
+
+}
+
+.table{
+
+margin-top:30px;
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+th{
+
+background:#2563eb;
+
+color:white;
+
+padding:15px;
+
+}
+
+td{
+
+padding:15px;
+
+text-align:center;
+
+border-bottom:1px solid #eee;
+
+}
+
+.correct{
+
+color:green;
+
+font-weight:bold;
+
+}
+
+.wrong{
+
+color:red;
+
+font-weight:bold;
+
+}
+
+.empty{
+
+color:orange;
+
+font-weight:bold;
+
+}
+
+.home-btn{
+
+margin-top:30px;
+
+display:block;
+
+width:250px;
+
+padding:15px;
+
+text-align:center;
+
+background:white;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+color:#2563eb;
+
+margin-right:auto;
+
+margin-left:auto;
+
+}
+
+@media(max-width:700px){
+
+.summary{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card result-card">
+
+<div class="header">
+
+<h1>
+
+کارنامه آزمون
+
+</h1>
+
+<p>
+
+نتیجه آزمون شما
+
+</p>
+
+</div>
+
+<div class="info">
+
+<div id="name"></div>
+
+<div id="phone"></div>
+
+<div id="grade"></div>
+
+</div>
+
+<div class="summary">
+
+<div class="box">
+
+صحیح
+
+<h2 id="correct">0</h2>
+
+</div>
+
+<div class="box">
+
+غلط
+
+<h2 id="wrong">0</h2>
+
+</div>
+
+<div class="box">
+
+نزده
+
+<h2 id="empty">0</h2>
+
+</div>
+
+<div class="box">
+
+نمره
+
+<h2 id="score">0</h2>
+
+</div>
+
+</div>
+
+<div class="table">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>درصد</th>
+
+<th>تعداد سوال</th>
+
+<th>پاسخ صحیح</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td id="percent"></td>
+
+<td>10</td>
+
+<td id="correctCount"></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<a href="index.html" class="home-btn">
+
+بازگشت به صفحه اصلی
+
+</a>
+
+<script>
+  const user = JSON.parse(localStorage.getItem("examUser"));
+const answers = JSON.parse(localStorage.getItem("answers"));
+
+const answerKey = [
+1,2,3,4,1,2,3,4,1,2
+];
+
+document.getElementById("name").innerHTML =
+"نام و نام خانوادگی : " +
+user.firstName +
+" " +
+user.lastName;
+
+document.getElementById("phone").innerHTML =
+"شماره تلفن : " +
+user.phone;
+
+document.getElementById("grade").innerHTML =
+"پایه تحصیلی : " +
+user.grade;
+
+let correct = 0;
+let wrong = 0;
+let empty = 0;
+
+for(let i=0;i<10;i++){
+
+if(answers[i]==""){
+
+empty++;
+
+}else if(Number(answers[i])===answerKey[i]){
+
+correct++;
+
+}else{
+
+wrong++;
+
+}
+
+}
+
+const score = correct;
+
+const percent = (correct*10);
+
+document.getElementById("correct").innerHTML = correct;
+document.getElementById("wrong").innerHTML = wrong;
+document.getElementById("empty").innerHTML = empty;
+document.getElementById("score").innerHTML = score + " از 10";
+
+document.getElementById("percent").innerHTML =
+percent + "%";
+
+document.getElementById("correctCount").innerHTML =
+correct;
+
+</script>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
