@@ -219,10 +219,9 @@ answers.push(selected?selected.value:"");
 
 }
 
-localStorage.setItem("answers",JSON.stringify(answers));
+localStorage.setItem("answers", JSON.stringify(answers));
 
-alert("پاسخنامه ثبت شد.");
-
+window.location.href = "result.html";
 });
 
 </script>
