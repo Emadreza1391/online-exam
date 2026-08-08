@@ -1,1 +1,21 @@
+{
+    "id": "oloom",
+    "title": "آزمون علوم",
 
+    "questionCount": 10,
+
+    "pdf": "assets/pdf/questions.pdf",
+
+    "answerKey": [
+        4,
+        3,
+        2,
+        1,
+        4,
+        3,
+        2,
+        1,
+        4,
+        3
+    ]
+}
