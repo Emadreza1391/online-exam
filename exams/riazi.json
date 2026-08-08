@@ -1,1 +1,20 @@
+{
+    "id": "riazi",
+    "title": "آزمون ریاضی",
+    "questionCount": 10,
 
+    "pdf": "assets/pdf/questions.pdf",
+
+    "answerKey": [
+        1,
+        2,
+        3,
+        4,
+        1,
+        2,
+        3,
+        4,
+        1,
+        2
+    ]
+}
